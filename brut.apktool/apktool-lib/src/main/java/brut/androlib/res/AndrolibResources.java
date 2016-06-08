@@ -691,7 +691,7 @@ final public class AndrolibResources {
         if (apkOptions.frameworkFolderLocation != null) {
             path = apkOptions.frameworkFolderLocation;
         } else {
-            File parentPath = new File(System.getProperty("user.home"));
+            File parentPath = new File(System.getProperty("user.home") + File.separator + ".local" + File.separator + "share");
             if (! parentPath.canWrite()) {
                 LOGGER.severe(String.format("WARNING: Could not write to $HOME (%s), using %s instead...",
                         parentPath.getAbsolutePath(), System.getProperty("java.io.tmpdir")));
